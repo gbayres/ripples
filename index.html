@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        height: 100%;
+      }
+      body {
+        background-image: url(bg.jpg);
+        background-size: cover;
+        background-position: 50% 0;
+        height: 100%;
+      }
+      .ripples-canvas {
+        position: absolute;
+        width: 100%;
+        left: 0;
+        top: 0;
+        z-index: -1;
+      }
+    </style>
+  </head>
+  <body>
+    <main background="bg.jpg" class="jquery-ripples">
+      <canvas class="ripples-canvas"></canvas>
+    </main>
+    <script src="script.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+          ripples({
+            resolution: 512,
+            dropRadius: 10, //px
+            perturbance: 0.02,
+          });
+      })
+    </script>
+  </body>
+</html>
